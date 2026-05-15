@@ -1,0 +1,240 @@
+/* ========================================= */
+/* GLOBAL STYLES */
+/* ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ========================================= */
+/* CONTAINER */
+/* ========================================= */
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
+
+h1 {
+    text-align: center;
+    color: #1e3a5f;
+    margin-bottom: 5px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* ========================================= */
+/* FORM ELEMENTS */
+/* ========================================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 18px;
+    color: #2c3e50;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 2px solid #e0e6ed;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fb;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* ========================================= */
+/* BUTTON */
+/* ========================================= */
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ========================================= */
+/* RESULT SECTION */
+/* ========================================= */
+
+.result {
+    margin-top: 30px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.result h2 {
+    color: #1e3a5f;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.result-box {
+    padding: 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #eef5ff 0%, #f0f4ff 100%);
+    border-left: 5px solid #667eea;
+}
+
+.result-box p {
+    margin: 12px 0;
+    color: #2c3e50;
+    font-size: 15px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.result-box strong {
+    color: #1e3a5f;
+    font-weight: 600;
+}
+
+/* ========================================= */
+/* RISK LEVEL */
+/* ========================================= */
+
+.risk {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.green {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.orange {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 2px solid #ffc107;
+}
+
+.red {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e6ed;
+}
+
+/* ========================================= */
+/* RESPONSIVE DESIGN */
+/* ========================================= */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .result-box {
+        padding: 18px;
+    }
+}

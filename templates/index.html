@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+    AI-Based Urban Flood Risk Prediction and Rainfall Forecasting System
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ========================================= -->
+        <!-- HEADER -->
+        <!-- ========================================= -->
+
+        <h1>🌊 Urban Flood Risk Prediction</h1>
+
+        <p class="subtitle">
+            AI-Based Flood Prediction and
+            Real-Time Rainfall Forecasting System
+        </p>
+
+
+        <!-- ========================================= -->
+        <!-- FORM -->
+        <!-- ========================================= -->
+
+        <form method="POST">
+
+            <!-- CITY -->
+
+            <label>City</label>
+
+            <input
+                type="text"
+                name="City"
+                placeholder="Enter City Name"
+                required
+            >
+
+
+            <!-- FLOOD FEATURES -->
+
+            <label>Urbanization</label>
+
+            <input
+                type="number"
+                step="any"
+                name="Urbanization"
+                placeholder="Enter Urbanization Value"
+                required
+            >
+
+
+            <label>Coastal Vulnerability</label>
+
+            <input
+                type="number"
+                step="any"
+                name="CoastalVulnerability"
+                placeholder="Enter Coastal Vulnerability"
+                required
+            >
+
+
+            <label>Drainage Systems</label>
+
+            <input
+                type="number"
+                step="any"
+                name="DrainageSystems"
+                placeholder="Enter Drainage System Score"
+                required
+            >
+
+
+            <label>Agricultural Practices</label>
+
+            <input
+                type="number"
+                step="any"
+                name="AgriculturalPractices"
+                placeholder="Enter Agricultural Practices Score"
+                required
+            >
+
+
+            <label>Political Factors</label>
+
+            <input
+                type="number"
+                step="any"
+                name="PoliticalFactors"
+                placeholder="Enter Political Factor Score"
+                required
+            >
+
+
+            <!-- BUTTON -->
+
+            <button type="submit">
+
+                Predict Flood Risk
+
+            </button>
+
+        </form>
+
+
+        <!-- ========================================= -->
+        <!-- RESULTS -->
+        <!-- ========================================= -->
+
+        {% if prediction %}
+
+        <div class="result">
+
+            <h2>📊 Prediction Result</h2>
+
+            <div class="result-box">
+
+                <p>
+                    <strong>📍 City:</strong>
+                    {{ city }}
+                </p>
+
+                <p>
+                    <strong>🌧 Forecasted Rainfall:</strong>
+                    {{ future_rainfall }} mm
+                </p>
+
+                <p>
+                    <strong>🌡 Temperature:</strong>
+                    {{ temperature }} °C
+                </p>
+
+                <p>
+                    <strong>💧 Humidity:</strong>
+                    {{ humidity }} %
+                </p>
+
+                <p>
+                    <strong>☁ Weather:</strong>
+                    {{ weather }}
+                </p>
+
+                <p>
+                    <strong>🌊 Flood Probability:</strong>
+                    {{ prediction }}
+                </p>
+
+                <p class="risk {{ risk_color }}">
+
+                    Risk Level: {{ risk_level }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- ========================================= -->
+        <!-- FOOTER -->
+        <!-- ========================================= -->
+
+        <div class="footer">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
